@@ -9,7 +9,14 @@ namespace ATMUnitTest
 	{
 	public:
 
+		//TEST CLASS FOR CUSTOMER: customer
+		//TEST CLASS FOR ACCOUNT: account
+		//TEST CLASS FOR ATM: atm
+
+
 		//ATM CLASS TESTS ************
+
+		//ADAM section
 		
 		TEST_METHOD(ATMGetCustomerInfoValid)//Tests GetCustomerInfo in ATM class with a customer object that has valid info
 		{
@@ -45,6 +52,8 @@ namespace ATMUnitTest
 		{
 			//
 		}
+
+		//JAMES Section
 
 		TEST_METHOD(ATMTransferBalanceValid)//Tests TransferBalance on the ATM class with sufficient funds to transfer
 		{
@@ -83,6 +92,8 @@ namespace ATMUnitTest
 			//
 		}
 
+		//JUSTIN section
+
 		TEST_METHOD(CustomerSetAddress)//Tests SetAddress on the Customer class to make sure it sets the correct value
 		{
 			//
@@ -119,6 +130,8 @@ namespace ATMUnitTest
 		{
 			//
 		}
+
+		//LEVI section
 
 		TEST_METHOD(AccountChangePin)//Tests ChangePin on the Account class to make sure the pin is properly updated to the new pin
 		{
