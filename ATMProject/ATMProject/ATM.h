@@ -5,6 +5,8 @@ class ATM
 private:
 	int testInt;
 
+
+
 public:
 
 	ATM(void)
