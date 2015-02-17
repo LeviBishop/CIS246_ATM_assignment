@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
+#include <vector>
 #include "ATM.h"
 #include "Account.h"
 #include "Customer.h"
@@ -29,8 +30,7 @@ namespace ATMUnitTest
 
 		TEST_METHOD(ATMGetCustomerInfoValid)//Tests GetCustomerInfo in ATM class with a customer object that has valid info
 		{
-			ATM* ATMTest = new ATM();
-			Assert::AreEqual(1, ATMTest->getTestInt());
+
 		}
 
 		TEST_METHOD(ATMGetCustomerInfoInvalid)//Tests GetCustomerInfo in ATM class with a customer object that has no info
@@ -103,20 +103,31 @@ namespace ATMUnitTest
 		}
 
 		//JUSTIN section
-
+		
 		TEST_METHOD(CustomerSetAddress)//Tests SetAddress on the Customer class to make sure it sets the correct value
 		{
-			
+			Customer* testCustomer = new Customer();
+			testCustomer->setAddress("123 Fake Street, Eugene, OR 97405");
+			Assert::AreSame("123 Fake Street, Eugene, OR 97405", testCustomer->getAddress());
+			delete testCustomer;
 		}
 
 		TEST_METHOD(CustomerSetPhone)//Tests SetPhone on the Customer class to make sure it sets the correct value
 		{
-			
+			Customer* testCustomer = new Customer();
+			testCustomer->setPhone("541-555-5555");
+			Assert::AreSame("541-555-5555", testCustomer->getPhone());
+			delete testCustomer;
 		}
 
 		TEST_METHOD(CustomerAddAccount)//Tests AddAccount on the Customer class to make sure it adds the account reference to the customer correctly
 		{
-			
+			Customer* testCustomer = new Customer();
+			testCustomer->addAccount(new Account());
+			vector<Account*> testAccounts = testCustomer->getAccounts();
+
+			Assert::AreSame(new Account(), testCustomer->getAccounts());
+			delete testCustomer;
 		}
 
 		TEST_METHOD(CustomerRemoveAccount)//Tests RemoveAccount on the Customer class to make sure it removes the correct account
