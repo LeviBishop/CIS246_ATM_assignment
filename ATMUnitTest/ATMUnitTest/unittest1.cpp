@@ -67,39 +67,44 @@ namespace ATMUnitTest
 
 		TEST_METHOD(ATMTransferBalanceValid)//Tests TransferBalance on the ATM class with sufficient funds to transfer
 		{
-			
+			//atm.transferBalance(500);
+			//Assert::AreEqual(500, account1->getBalance());
+			//Assert::AreEqual(500, account2->getBalance());
 		}
 
 		TEST_METHOD(ATMTransferBalanceInvalid)//Tests TransferBalance on the ATM class with insufficient funds to transfer
 		{
-			
+			//atm.transferBalance(500);
+			//Assert::AreEqual(0, account1->getBalance());
+			//Assert::AreEqual(0, account2->getBalance());
 		}
 
 		TEST_METHOD(ATMDestroyCard)//Tests DestroyCard on the ATM class to ensure the card is destroyed?
 		{
-			
+			//Assert::IsTrue(atm.destroyCard());
 		}
 
 		//CUSTOMER CLASS TESTS ******************
 
 		TEST_METHOD(CustomerGetName)//Tests GetName on the Customer class to make sure it returns the correct value
 		{
-			
+			//Assert::AreEqual("James", customer.getName());
 		}
 
 		TEST_METHOD(CustomerGetAddress)//Tests GetAddress on the Customer class to make sure it returns the correct value
 		{
-			
+			//Assert::AreEqual("1234 Street", customer.getAddress());
 		}
 
 		TEST_METHOD(CustomerGetPhone)//Tests GetPhone on the Customer class to make sure it returns the correct value
 		{
-			
+			//Assert::AreEqual("541-555-1234", customer.getPhone());
 		}
 
 		TEST_METHOD(CustomerSetName)//Tests SetName on the Customer class to make sure it sets the correct value
 		{
-			
+			//customer.setName("James");
+			//Assert::AreEqual("James", customer.getName());
 		}
 
 		//JUSTIN section
