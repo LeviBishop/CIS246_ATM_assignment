@@ -21,6 +21,12 @@ namespace ATMUnitTest
 
 		//ADAM section
 		
+		TEST_METHOD(SampleTestMethod)//Tests GetCustomerInfo in ATM class with a customer object that has valid info
+		{
+			ATM* ATMTest = new ATM();
+			Assert::AreEqual(1, ATMTest->getTestInt());
+		}
+
 		TEST_METHOD(ATMGetCustomerInfoValid)//Tests GetCustomerInfo in ATM class with a customer object that has valid info
 		{
 			ATM* ATMTest = new ATM();
