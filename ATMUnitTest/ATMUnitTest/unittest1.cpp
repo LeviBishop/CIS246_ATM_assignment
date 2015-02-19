@@ -152,9 +152,9 @@ namespace ATMUnitTest
 		{
 			Customer* testCustomer = new Customer();
 			testCustomer->addAccount(new Account());
-			vector<Account*> testAccounts = testCustomer->getAccounts();
+			std::vector<Account*> testAccounts = testCustomer->getAccounts();
 
-			Assert::AreSame(new Account(), testCustomer->getAccounts());
+			Assert::AreSame(new Account(),testAccounts[0]);
 			delete testCustomer;
 		}
 
