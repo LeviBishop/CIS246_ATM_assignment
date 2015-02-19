@@ -1,4 +1,20 @@
 #pragma once
+#include "ATM.h"
+
+/*
+BankBalance
+Customer*
+Accounts[]*
+
+GetCustomerInfo()
+GetBalance()
+Withdrawal()
+Deposit()
+SetPIN()
+TransferBalance()
+DestroyCard()
+
+*/
 
 class ATM
 {
