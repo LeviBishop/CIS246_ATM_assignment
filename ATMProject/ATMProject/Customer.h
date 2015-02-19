@@ -2,6 +2,18 @@
 #include <string>
 #include "Account.h"
 
+/*
+GetCustInfo()
+SetName()
+SetAddress()
+setPhone()
+AddAccount()
+RemoveAccount()
+GetAccounts()
+TransferBalance()
+
+*/
+
 class Customer
 {
 private:

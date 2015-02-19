@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
 #include <vector>
+#include <iostream>
 #include "ATM.h"
 #include "Account.h"
 #include "Customer.h"
@@ -183,32 +184,63 @@ namespace ATMUnitTest
 
 		TEST_METHOD(AccountChangePin)//Tests ChangePin on the Account class to make sure the pin is properly updated to the new pin
 		{
-			
+			Account* testPin = new Account;
+			testPin->changePin("newPin");
+			Assert::AreSame("newPin", testPin->changePin());
+			delete "newPin"
 		}
 
 		TEST_METHOD(AccountStatement)//Tests Statement on the Account class to make sure it returns all the transaction information for the specified time period
 		{
-			
+			Account* testStatement = new Account();
+			testStatement->statement("acctStatement");
+			Assert::AreEqual("acctStatement", testStatement->statement());
+			delete "acctStatement";
 		}
 
 		TEST_METHOD(AccountGetBalance)//Tests GetBalance on the Account class 
 		{
-			
+			Account* balance = new Account;
+			balance->getBalance("number");
+			Assert::AreEqual("number", balance.getBalance());
+			delete "number";
 		}
 
 		TEST_METHOD(AccountWithdrawalValid)//Tests Withdrawal on the Account class with sufficient funds 
 		{
-			
+			int balance;
+			int withdraw;
+			if (balance <= withdraw)
+			{
+				true;
+			}
+			else
+			{
+				false;
+			}
+			Assert::IsTrue(true);
 		}
 
 		TEST_METHOD(AccountWithdrawalInvalid)//Tests Withdrawal on the Account class with insufficient funds
 		{
-			
+			int balance;
+			int withdraw;
+			if (balance >= withdraw)
+			{
+				true;
+			} 
+			else
+			{
+				false;
+			}
+			Assert::IsTrue(true);
 		}
 
 		TEST_METHOD(AccountDeposit)//Tests Deposit on the Account class 
 		{
-			
+			Account* balance = new Account;
+			balance->deposit("depAmount");
+			Assert::AreEqual("depAmount", balance->deposit());
 		}
 	};
 }
