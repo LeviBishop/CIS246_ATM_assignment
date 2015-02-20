@@ -31,59 +31,68 @@ namespace ATMUnitTest
 
 		TEST_METHOD(ATMGetCustomerInfoValid)//Tests GetCustomerInfo in ATM class with a customer object that has valid info
 		{
-			//customer.setName("Adam Cameron");
-			//customer.setAddress("151 Green Ln");
-			//customer.setPhone("777-777-7777");
-			//Assert::AreEqual(customer.getName(), "Adam Cameron");
-			//Assert::AreEqual(customer.getAddress(), "151 Green Ln");
-			//Assert::AreEqual(customer.getPhone(), "777-777-7777");
-
+			Customer* testCustomer = new Customer();
+			testCustomer->setName("Adam Cameron");
+			testCustomer->setAddress("123 Green Ln");
+			testCustomer->setPhone("777-777-7777");
+			Assert::AreSame("Adam Cameron", testCustomer.getName());
+			Assert::AreSame("151 Green Ln", testCustomer.getAddress());
+			Assert::AreSame("777-777-7777", testCustomer.getPhone());
+			delete testCustomer;
 		}
 
 		TEST_METHOD(ATMGetCustomerInfoInvalid)//Tests GetCustomerInfo in ATM class with a customer object that has no info
 		{
-			//customer.setName("Adam Cameron");
-			//customer.setAddress("151 Green Ln");
-			//customer.setPhone("777-777-7777");
-			//Assert::AreEqual(customer.getName(), "");
-			//Assert::AreEqual(customer.getAddress(), "");
-			//Assert::AreEqual(customer.getPhone(), "");
+			Customer* testCustomer = new Customer();
+			customer.setName("Adam Cameron");
+			customer.setAddress("123 Green Ln");
+			customer.setPhone("777-777-7777");
+			Assert::AreSame(customer.getName(), "");//not sure this is right
+			Assert::AreSame(customer.getAddress(), "");
+			Assert::AreSame(customer.getPhone(), "");
+			delete testCustomer;
 		}
 
 		TEST_METHOD(ATMGetBalance)//Tests GetBalance on the ATM class with no account pointer
 		{
-			//atm.setBalance(500);
-			//atm.getBalance();
-			//Assert::AreEqual(500, atm.getBalance);
-
+			Customer* testBalance = new Customer();
+			testBalance->setBalance(500);
+			Assert::AreEqual(500, testBalance->getBalance());
+			delete testCustomer;
 		}
 
 		TEST_METHOD(ATMWithdrawlValid)//Tests Withdrawal on the ATM class when the ATM has sufficient funds
 		{
-			//atm.withdraw(500);
-			//Assert::AreEqual(500, atm.getBalance());
-
+			customer* testwithdrawal = new customer();
+			testwithdrawal->withdraw(500);
+			assert::areequal(500, testwithdrawal->getbalance());
+			delete testcustomer;
 		}
 
 		TEST_METHOD(ATMWithdrawlInvalid)//Tests Withdrawal on the ATM class when the ATM has insufficient funds
 		{
-			//atm.setBalance(200);
-			//atm.withdrawal(500);
-			//Assert::AreEqual(atm.getBalance(), atm.withdrawal());
-
+			Customer* testWithdrawal = new Customer();
+			testWithdrawal->setBalance(200);
+			testWithdrawal->withdrawal(500);
+			Assert::AreEqual(testWithdrawal->getBalance(), testWithdrawal->withdrawal());//not right yet
+			delete testWithdrawal;
 		}
 
 		TEST_METHOD(ATMDeposit)//Tests deposit on the ATM class
 		{
-			//customer.deposit(500);
-			//Assert::AreEqual(500, account1->getBalance());
+			Customer* testDeposit = new Customer();
+			testDeposit->deposit(500);
+			Assert::AreSame(500, account1->getBalance());
+			delete testDeposit;
 		}
 
 		TEST_METHOD(ATMSetPin)//Tests SetPin on the ATM class
 		{
-			//atm.setPin(5555)
-			//atm.verifyNewPin(5555)
-			//Assert::AreEqual(setPin, verifyNewPin);
+			Customer* testPIN = new Customer();
+			testPIN->setPin(5555)
+			testPIN->testPin(5555)
+			Assert::AreEqual(setPin, verifyNewPin);
+			delete testPIN;
 		}
 
 		//JAMES Section
