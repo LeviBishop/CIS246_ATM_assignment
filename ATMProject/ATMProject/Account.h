@@ -1,16 +1,6 @@
 #pragma once
 #include "Account.h"
 #include <cstdlib>
-/*
-WithdrawalValid
-WithdrawalInvalid
-
-Pin
-Balance
-Account #
-Customer *
-History []
-*/
 
 class Account
 {

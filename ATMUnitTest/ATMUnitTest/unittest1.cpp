@@ -235,27 +235,29 @@ namespace ATMUnitTest
 
 		TEST_METHOD(AccountWithdrawalValid)//Tests Withdrawal on the Account class with sufficient funds 
 		{
-			int balance;
-			int withdraw;
-			if (balance <= withdraw)
+			int acctBal = 100;
+			Account* balance = new Account;
+			balance->withdraw(75);
+			if (75 <= acctBal)
 			{
-				true;
-			}
+				return true;
+			} 
 			else
 			{
-				false;
+				return false;
 			}
 			Assert::IsTrue(true);
 		}
 
 		TEST_METHOD(AccountWithdrawalInvalid)//Tests Withdrawal on the Account class with insufficient funds
 		{
-			int balance;
-			int withdraw;
-			if (balance >= withdraw)
+			int acctBal = 100;
+			Account* balance = new Account;
+			balance->withdraw(150);
+			if (150 >= acctBal)
 			{
 				true;
-			} 
+			}
 			else
 			{
 				false;
@@ -268,6 +270,7 @@ namespace ATMUnitTest
 			Account* balance = new Account;
 			balance->deposit("depAmount");
 			Assert::AreEqual("depAmount", balance->deposit());
+			delete "depAmount";
 		}
 	};
 }
