@@ -160,33 +160,51 @@ namespace ATMUnitTest
 		TEST_METHOD(CustomerAddAccount)//Tests AddAccount on the Customer class to make sure it adds the account reference to the customer correctly
 		{
 			Customer* testCustomer = new Customer();
-			testCustomer->addAccount(new Account());
+			testCustomer->addAccount(new Account(12345));
 			std::vector<Account*> testAccounts = testCustomer->getAccounts();
 
-			Assert::AreSame(new Account(),testAccounts[0]);
+			Assert::AreSame(new Account(12345),testAccounts[0]);
 			delete testCustomer;
 		}
 
 		TEST_METHOD(CustomerRemoveAccount)//Tests RemoveAccount on the Customer class to make sure it removes the correct account
 		{
-			
+			Customer* testCustomer = new Customer();
+			testCustomer->addAccount(new Account(12345));
+			testCustomer->deleteAccount(12345);
+			std::vector<Account*> testAccounts = testCustomer->getAccounts();
+
+			Assert::AreEqual(nullptr, testAccounts[0]);
 		}
 
 		TEST_METHOD(CustomerGetAccounts)//Tests GetAccounts on the Customer class to make sure it returns the correct account information
 		{
-			
+			Customer* testCustomer = new Customer();
+			testCustomer->addAccount(1);
+			testCustomer->addAccount(2);
+			testCustomer->addAccount(3);
+
+			std::vector<Account*> testAccounts = testCustomer->getAccounts();
+			Assert::AreEqual(1, testAccounts[0]->getAccountNumber());
+			Assert::AreEqual(2, testAccounts[1]->getAccountNumber());
+			Assert::AreEqual(3, testAccounts[2]->getAccountNumber());
 		}
 
 		//ACCOUNT CLASS TESTS *******************************
 
 		TEST_METHOD(AccountGetCustomer)//Tests GetCustomer on the Account class to make sure it returns the correct customer information
 		{
-			
+			Customer* testCustomer = new Customer();
+			testCustomer->addAccount(1);
+			std::vector<Account*> testAccounts = testCustomer->getAccounts();
+			Assert::AreSame(testCustomer, testAccounts[0]->getCustomer());
 		}
 
 		TEST_METHOD(AccountVerifyPin)//Tests VerifyPin on the Account class to make sure it verifies the pin properly
 		{
-			
+			Account* testAccount = new Account(1);
+			testAccount->setPin(1234);
+			Assert::IsTrue(testAccount->verifyPin(1234));
 		}
 
 		//LEVI section
