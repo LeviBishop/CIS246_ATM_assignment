@@ -1,11 +1,13 @@
 #pragma once
-<<<<<<< HEAD
+//<<<<<<< HEAD
 #include "Customer.h"
-
-=======
-#include "ATM.h"
+#include <vector>
 #include <iostream>
->>>>>>> origin/master
+
+//=======
+//#include "ATM.h"
+//#include <iostream>
+//>>>>>>> origin/master
 
 /*
 BankBalance
@@ -27,13 +29,13 @@ class ATM
 private:
 	double bankBalance;
 	Customer* customer;
-	Account accounts[];
+	Account* accounts[];
 
 
 
 public:
 
-	ATM(void)
+	ATM(void);
 	void getCustomerInfo(void)
 	{
 		std::cout << "Name: \n" << customer->getName() << "\n";
@@ -42,11 +44,15 @@ public:
 	}
 
 	int getTestInt(void)
+	{
+		int testInt = 5;
+		return testInt;
+	}
+
 	void getBalance(int account)
 	{
-		return testInt;
 		int index = customer->getAccountIndex(account);
-		cout << "Your current balance is: " << accounts[index]->getBalance() << ".\n";
+		std::cout << "Your current balance is: " << accounts[index]->getBalance() << ".\n";
 	}
 
 	void withdraw(double amount, int account)
@@ -72,25 +78,24 @@ public:
 		int index = customer->getAccountIndex(account);
 		int oldPin;
 		bool pinChanged = false;
-		cout << "Please enter your previous PIN";
-		std::cin >> oldPin;
 		for (int i = 0; i < 3; i++)
 		{
-			cout << "Please enter your old Pin";
-			if (accounts[index]->changePin)
+			std::cout << "Please enter your old Pin";
+			std::cin >> oldPin;
+			if (accounts[index]->changePin(oldPin, pin))
 			{
-				cout << "You have successfully changed your PIN\n";
+				std::cout << "You have successfully changed your PIN\n";
 				pinChanged = true;
 			}
 			else
 			{
-				cout << "That entry is invalid\n";
+				std::cout << "That entry is invalid\n";
 			}
 		}
 		if (!pinChanged)
 		{
-			cout << "You have entered an invalid PIN to many times. \n";
-			cout << "Your account is now locked. Please speak with someone inside the bank to resolve this. \n";
+			std::cout << "You have entered an invalid PIN to many times. \n";
+			std::cout << "Your account is now locked. Please speak with someone inside the bank to resolve this. \n";
 		}
 
 	}

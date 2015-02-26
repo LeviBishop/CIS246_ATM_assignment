@@ -1,6 +1,5 @@
 #pragma once
 #include <string>
-#include <vector>
 #include "Account.h"
 /*
 GetCustInfo()
@@ -83,7 +82,7 @@ public:
 		return &accounts;
 	}
 
-	void transferBalance(double amount, int accountFrom, int accountTo)
+	bool transferBalance(double amount, int accountFrom, int accountTo)
 	{
 		int accountIndexFrom;
 		int accountIndexTo;
@@ -94,7 +93,10 @@ public:
 		if (accounts[accountIndexFrom]->transferOut(amount))
 		{
 			accounts[accountIndexTo]->transferIn(amount);
+			return true;
 		}
+
+		return false;
 	}
 
 	int getAccountIndex(int accountNum)
