@@ -1,8 +1,9 @@
 #pragma once
-#include "Customer.h"
 #include "Transaction.h"
 #include <cstdlib>
 #include <vector>
+
+class Customer;
 
 class Account
 {
@@ -47,10 +48,10 @@ public:
 		}
 	}
 
-	std::vector<Transaction*>* statement(void)
+	/*std::vector<Transaction*>* statement(void)
 	{
 
-	}
+	}*/
 
 	double getBalance(void)
 	{
@@ -61,7 +62,7 @@ public:
 	{
 		if (balance >= withAmt)
 		{
-			decBalance;
+			decBalance(withAmt);
 			return true;
 		}
 		return false;
@@ -94,3 +95,5 @@ public:
 	}
 
 }; 
+
+

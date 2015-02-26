@@ -7,11 +7,8 @@ int main(void)
 {
 
 
-
+	
 	system("pause");
-}
 
-int testMultiply(int x, int y)
-{
-	return x * y;
+	return 0;
 }

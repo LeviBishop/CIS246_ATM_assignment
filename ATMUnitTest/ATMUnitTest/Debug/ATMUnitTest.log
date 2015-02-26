@@ -1,192 +1,32 @@
-﻿Build started 2/26/2015 10:49:31 AM.
+﻿Build started 2/26/2015 1:40:12 PM.
      1>Project "C:\Users\Justin\Desktop\CS246-atm\CIS246_ATM_assignment\ATMUnitTest\ATMUnitTest\ATMUnitTest.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\UnitTest\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\ATMUnitTest.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /FC /errorReport:prompt unittest1.cpp
          unittest1.cpp
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(23): error C2143: syntax error : missing ';' before '*'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(23): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\account.h(56): error C3867: 'Account::decBalance': function call missing argument list; use '&Account::decBalance' to create a pointer to member
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(35): error C2039: 'setName' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(36): error C2039: 'setAddress' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(37): error C2039: 'setPhone' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(38): error C2228: left of '.getName' must have class/struct/union
-                 type is 'Customer *'
-                 did you intend to use '->' instead?
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(38): error C2780: 'void Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreSame(const T &,const T &,const wchar_t *,const Microsoft::VisualStudio::CppUnitTestFramework::__LineInfo *)' : expects 4 arguments - 1 provided
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\unittest\include\cppunittestassert.h(185) : see declaration of 'Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreSame'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(39): error C2228: left of '.getAddress' must have class/struct/union
-                 type is 'Customer *'
-                 did you intend to use '->' instead?
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(39): error C2780: 'void Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreSame(const T &,const T &,const wchar_t *,const Microsoft::VisualStudio::CppUnitTestFramework::__LineInfo *)' : expects 4 arguments - 1 provided
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\unittest\include\cppunittestassert.h(185) : see declaration of 'Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreSame'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(40): error C2228: left of '.getPhone' must have class/struct/union
-                 type is 'Customer *'
-                 did you intend to use '->' instead?
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(40): error C2780: 'void Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreSame(const T &,const T &,const wchar_t *,const Microsoft::VisualStudio::CppUnitTestFramework::__LineInfo *)' : expects 4 arguments - 1 provided
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\unittest\include\cppunittestassert.h(185) : see declaration of 'Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreSame'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(47): error C2065: 'customer' : undeclared identifier
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(47): error C2228: left of '.setName' must have class/struct/union
-                 type is 'unknown-type'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(48): error C2065: 'customer' : undeclared identifier
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(48): error C2228: left of '.setAddress' must have class/struct/union
-                 type is 'unknown-type'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(49): error C2065: 'customer' : undeclared identifier
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(49): error C2228: left of '.setPhone' must have class/struct/union
-                 type is 'unknown-type'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(50): error C2065: 'customer' : undeclared identifier
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(50): error C2228: left of '.getName' must have class/struct/union
-                 type is 'unknown-type'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(51): error C2065: 'customer' : undeclared identifier
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(51): error C2228: left of '.getAddress' must have class/struct/union
-                 type is 'unknown-type'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(52): error C2065: 'customer' : undeclared identifier
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(52): error C2228: left of '.getPhone' must have class/struct/union
-                 type is 'unknown-type'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(59): error C2039: 'setBalance' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(60): error C2039: 'getBalance' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(60): error C2661: 'Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreEqual' : no overloaded function takes 1 arguments
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(61): error C2065: 'testCustomer' : undeclared identifier
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(61): error C2541: 'delete' : cannot delete objects that are not pointers
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(66): error C2065: 'customer' : undeclared identifier
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(66): error C2065: 'testwithdrawal' : undeclared identifier
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(66): error C2061: syntax error : identifier 'customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(67): error C2065: 'testwithdrawal' : undeclared identifier
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(67): error C2227: left of '->withdraw' must point to class/struct/union/generic type
-                 type is 'unknown-type'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(68): error C2653: 'assert' : is not a class or namespace name
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(68): error C2065: 'testwithdrawal' : undeclared identifier
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(68): error C2227: left of '->getbalance' must point to class/struct/union/generic type
-                 type is 'unknown-type'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(68): error C3861: 'areequal': identifier not found
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(69): error C2065: 'testcustomer' : undeclared identifier
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(69): error C2541: 'delete' : cannot delete objects that are not pointers
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(75): error C2039: 'setBalance' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(76): error C2039: 'withdrawal' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(77): error C2039: 'getBalance' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(77): error C2039: 'withdrawal' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(77): error C2661: 'Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreEqual' : no overloaded function takes 1 arguments
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(84): error C2039: 'deposit' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(85): error C2065: 'account1' : undeclared identifier
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(85): error C2227: left of '->getBalance' must point to class/struct/union/generic type
-                 type is 'unknown-type'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(85): error C2780: 'void Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreSame(const T &,const T &,const wchar_t *,const Microsoft::VisualStudio::CppUnitTestFramework::__LineInfo *)' : expects 4 arguments - 1 provided
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\unittest\include\cppunittestassert.h(185) : see declaration of 'Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreSame'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(92): error C2039: 'setPin' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(93): error C2146: syntax error : missing ';' before identifier 'testPIN'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(93): error C2039: 'testPin' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(94): error C2143: syntax error : missing ';' before 'Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreEqual'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(94): error C2065: 'setPin' : undeclared identifier
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(94): error C2065: 'verifyNewPin' : undeclared identifier
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(147): error C2039: 'setAddress' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(148): error C2039: 'getAddress' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(148): error C2780: 'void Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreSame(const T &,const T &,const wchar_t *,const Microsoft::VisualStudio::CppUnitTestFramework::__LineInfo *)' : expects 4 arguments - 1 provided
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\unittest\include\cppunittestassert.h(185) : see declaration of 'Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreSame'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(155): error C2039: 'setPhone' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(156): error C2039: 'getPhone' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(156): error C2780: 'void Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreSame(const T &,const T &,const wchar_t *,const Microsoft::VisualStudio::CppUnitTestFramework::__LineInfo *)' : expects 4 arguments - 1 provided
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\unittest\include\cppunittestassert.h(185) : see declaration of 'Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreSame'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(163): error C2039: 'addAccount' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(163): error C2664: 'Account::Account(const Account &)' : cannot convert argument 1 from 'int' to 'const Account &'
-                 Reason: cannot convert from 'int' to 'const Account'
-                 No constructor could take the source type, or constructor overload resolution was ambiguous
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(164): error C2039: 'getAccounts' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(166): error C2664: 'Account::Account(const Account &)' : cannot convert argument 1 from 'int' to 'const Account &'
-                 Reason: cannot convert from 'int' to 'const Account'
-                 No constructor could take the source type, or constructor overload resolution was ambiguous
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(173): error C2039: 'addAccount' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(173): error C2664: 'Account::Account(const Account &)' : cannot convert argument 1 from 'int' to 'const Account &'
-                 Reason: cannot convert from 'int' to 'const Account'
-                 No constructor could take the source type, or constructor overload resolution was ambiguous
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(174): error C2039: 'deleteAccount' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(175): error C2039: 'getAccounts' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(177): error C2665: 'Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreEqual' : none of the 8 overloads could convert all the argument types
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\unittest\include\cppunittestassert.h(179): could be 'void Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreEqual(const wchar_t *,const wchar_t *,bool,const wchar_t *,const Microsoft::VisualStudio::CppUnitTestFramework::__LineInfo *)'
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\unittest\include\cppunittestassert.h(160): or       'void Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreEqual(const char *,const char *,bool,const wchar_t *,const Microsoft::VisualStudio::CppUnitTestFramework::__LineInfo *)'
-                 while trying to match the argument list '(nullptr, Account *)'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(183): error C2039: 'addAccount' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(184): error C2039: 'addAccount' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(185): error C2039: 'addAccount' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(187): error C2039: 'getAccounts' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(188): error C2039: 'getAccountNumber' : is not a member of 'Account'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\account.h(8) : see declaration of 'Account'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(188): error C2661: 'Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreEqual' : no overloaded function takes 1 arguments
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(189): error C2039: 'getAccountNumber' : is not a member of 'Account'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\account.h(8) : see declaration of 'Account'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(189): error C2661: 'Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreEqual' : no overloaded function takes 1 arguments
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(190): error C2039: 'getAccountNumber' : is not a member of 'Account'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\account.h(8) : see declaration of 'Account'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(190): error C2661: 'Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreEqual' : no overloaded function takes 1 arguments
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(198): error C2039: 'addAccount' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(199): error C2039: 'getAccounts' : is not a member of 'Customer'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\customer.h(18) : see declaration of 'Customer'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(205): error C2664: 'Account::Account(const Account &)' : cannot convert argument 1 from 'int' to 'const Account &'
-                 Reason: cannot convert from 'int' to 'const Account'
-                 No constructor could take the source type, or constructor overload resolution was ambiguous
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(206): error C2039: 'setPin' : is not a member of 'Account'
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmproject\atmproject\account.h(8) : see declaration of 'Account'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(215): error C2660: 'Account::changePin' : function does not take 1 arguments
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(216): error C2660: 'Account::changePin' : function does not take 0 arguments
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(216): error C2780: 'void Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreSame(const T &,const T &,const wchar_t *,const Microsoft::VisualStudio::CppUnitTestFramework::__LineInfo *)' : expects 4 arguments - 1 provided
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\unittest\include\cppunittestassert.h(185) : see declaration of 'Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreSame'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(218): warning C4156: deletion of an array expression without using the array form of 'delete'; array form substituted
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(218): warning C4154: deletion of an array expression; conversion to pointer supplied
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(218): error C2143: syntax error : missing ';' before '}'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(223): error C2660: 'Account::statement' : function does not take 1 arguments
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(224): error C2665: 'Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreEqual' : none of the 8 overloads could convert all the argument types
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\unittest\include\cppunittestassert.h(179): could be 'void Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreEqual(const wchar_t *,const wchar_t *,bool,const wchar_t *,const Microsoft::VisualStudio::CppUnitTestFramework::__LineInfo *)'
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\unittest\include\cppunittestassert.h(160): or       'void Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreEqual(const char *,const char *,bool,const wchar_t *,const Microsoft::VisualStudio::CppUnitTestFramework::__LineInfo *)'
-                 while trying to match the argument list '(const char [14], std::vector<Transaction *,std::allocator<_Ty>> *)'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\unittest\include\cppunittestassert.h(68): error C2338: Test writer must define specialization of ToString<Q* q> for your class class std::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> > __cdecl Microsoft::VisualStudio::CppUnitTestFramework::ToString<class Account>(class Account *).
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\unittest\include\cppunittestassert.h(187) : see reference to function template instantiation 'std::wstring Microsoft::VisualStudio::CppUnitTestFramework::ToString<Account>(Q *)' being compiled
                  with
                  [
-                     _Ty=Transaction *
+                     Q=Account
                  ]
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(225): warning C4156: deletion of an array expression without using the array form of 'delete'; array form substituted
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(225): warning C4154: deletion of an array expression; conversion to pointer supplied
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(231): error C2660: 'Account::getBalance' : function does not take 1 arguments
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(232): error C2228: left of '.getBalance' must have class/struct/union
-                 type is 'Account *'
-                 did you intend to use '->' instead?
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(232): error C2661: 'Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreEqual' : no overloaded function takes 1 arguments
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(233): warning C4156: deletion of an array expression without using the array form of 'delete'; array form substituted
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(233): warning C4154: deletion of an array expression; conversion to pointer supplied
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(243): error C2562: 'ATMUnitTest::UnitTest1::AccountWithdrawalValid' : 'void' function returning a value
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(236) : see declaration of 'ATMUnitTest::UnitTest1::AccountWithdrawalValid'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(247): error C2562: 'ATMUnitTest::UnitTest1::AccountWithdrawalValid' : 'void' function returning a value
-                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(236) : see declaration of 'ATMUnitTest::UnitTest1::AccountWithdrawalValid'
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(271): error C2664: 'void Account::deposit(double)' : cannot convert argument 1 from 'const char [10]' to 'double'
-                 There is no context in which this conversion is possible
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(272): error C2660: 'Account::deposit' : function does not take 0 arguments
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(272): error C2661: 'Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreEqual' : no overloaded function takes 1 arguments
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(273): warning C4156: deletion of an array expression without using the array form of 'delete'; array form substituted
-     1>c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(273): warning C4154: deletion of an array expression; conversion to pointer supplied
+                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(160) : see reference to function template instantiation 'void Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreSame<Account*>(const T &,const T &,const wchar_t *,const Microsoft::VisualStudio::CppUnitTestFramework::__LineInfo *)' being compiled
+                 with
+                 [
+                     T=Account *
+                 ]
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\unittest\include\cppunittestassert.h(68): error C2338: Test writer must define specialization of ToString<Q* q> for your class class std::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> > __cdecl Microsoft::VisualStudio::CppUnitTestFramework::ToString<class Customer>(class Customer *).
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\unittest\include\cppunittestassert.h(187) : see reference to function template instantiation 'std::wstring Microsoft::VisualStudio::CppUnitTestFramework::ToString<Customer>(Q *)' being compiled
+                 with
+                 [
+                     Q=Customer
+                 ]
+                 c:\users\justin\desktop\cs246-atm\cis246_atm_assignment\atmunittest\atmunittest\unittest1.cpp(202) : see reference to function template instantiation 'void Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreSame<Customer*>(const T &,const T &,const wchar_t *,const Microsoft::VisualStudio::CppUnitTestFramework::__LineInfo *)' being compiled
+                 with
+                 [
+                     T=Customer *
+                 ]
      1>Done Building Project "C:\Users\Justin\Desktop\CS246-atm\CIS246_ATM_assignment\ATMUnitTest\ATMUnitTest\ATMUnitTest.vcxproj" (Build target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:00.90
+Time Elapsed 00:00:00.15

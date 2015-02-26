@@ -2,7 +2,6 @@
 #include <string>
 #include <vector>
 #include "Account.h"
-
 /*
 GetCustInfo()
 SetName()
@@ -21,7 +20,7 @@ private:
 	std::string name;
 	std::string address;
 	std::string phone;
-	std::vector <Account*> accounts;
+	std::vector<Account*> accounts;
 	int numAccounts;
 
 public:
@@ -102,7 +101,7 @@ public:
 	{
 		for (int i = 0; i < numAccounts; i++)
 		{
-			if (accountNum == accounts[i]->getAccountNum)
+			if (accountNum == accounts[i]->getAccountNum())
 			{
 				return i;
 			}

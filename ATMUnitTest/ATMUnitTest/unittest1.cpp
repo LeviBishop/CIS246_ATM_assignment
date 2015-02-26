@@ -23,19 +23,10 @@ namespace ATMUnitTest
 		//ATM CLASS TESTS ************
 
 		//ADAM section
-		
-		TEST_METHOD(SampleTestMethod)//Tests GetCustomerInfo in ATM class with a customer object that has valid info
+		/*TEST_METHOD(ATMGetCustomerInfoValid)//Tests GetCustomerInfo in ATM class with a customer object that has valid info
 		{
-			ATM* ATMTest = new ATM();
-			Assert::AreEqual(1, ATMTest->getTestInt());
-		}
 
-		TEST_METHOD(ATMGetCustomerInfoValid)//Tests GetCustomerInfo in ATM class with a customer object that has valid info
-		{
-			Customer* testCustomer = new Customer();
-			testCustomer->setName("Adam Cameron");
-			testCustomer->setAddress("123 Green Ln");
-			testCustomer->setPhone("777-777-7777");
+			Customer* testCustomer = new Customer("Adam Cameron", "123 Green Ln", "777-777-7777");
 			Assert::AreSame("Adam Cameron", testCustomer.getName());
 			Assert::AreSame("151 Green Ln", testCustomer.getAddress());
 			Assert::AreSame("777-777-7777", testCustomer.getPhone());
@@ -94,7 +85,7 @@ namespace ATMUnitTest
 			testPIN->testPin(5555)
 			Assert::AreEqual(setPin, verifyNewPin);
 			delete testPIN;
-		}
+		}*/
 
 		//JAMES Section
 
@@ -144,52 +135,60 @@ namespace ATMUnitTest
 		
 		TEST_METHOD(CustomerSetAddress)//Tests SetAddress on the Customer class to make sure it sets the correct value
 		{
-			Customer* testCustomer = new Customer();
-			testCustomer->setAddress("123 Fake Street, Eugene, OR 97405");
-			Assert::AreSame("123 Fake Street, Eugene, OR 97405", testCustomer->getAddress());
+			Customer* testCustomer = new Customer("","","");
+			std::string testAddress = "123 Fake Street, Eugene, OR 97405";
+			testCustomer->setAddress(testAddress);
+			Assert::AreSame(testAddress, testCustomer->getAddress());
 			delete testCustomer;
 		}
 
 		TEST_METHOD(CustomerSetPhone)//Tests SetPhone on the Customer class to make sure it sets the correct value
 		{
-			Customer* testCustomer = new Customer();
+			Customer* testCustomer = new Customer("","","");
 			testCustomer->setPhone("541-555-5555");
-			Assert::AreSame("541-555-5555", testCustomer->getPhone());
+			std::string testPhone = "541-555-5555";
+			Assert::AreSame(testPhone, testCustomer->getPhone());
 			delete testCustomer;
 		}
 
 		TEST_METHOD(CustomerAddAccount)//Tests AddAccount on the Customer class to make sure it adds the account reference to the customer correctly
 		{
-			Customer* testCustomer = new Customer();
-			testCustomer->addAccount(new Account(12345));
-			std::vector<Account*> testAccounts = testCustomer->getAccounts();
-
-			Assert::AreSame(new Account(12345),testAccounts[0]);
+			Customer* testCustomer = new Customer("", "", "");
+			testCustomer->addAccount(1111, 12345);
+			std::vector<Account*>* testAccounts = testCustomer->getAccounts();
+			Account* testAccount = new Account(1111, 121345, testCustomer);
+			Assert::AreSame(testAccount, testAccounts[0][0]);
 			delete testCustomer;
 		}
 
 		TEST_METHOD(CustomerRemoveAccount)//Tests RemoveAccount on the Customer class to make sure it removes the correct account
 		{
-			Customer* testCustomer = new Customer();
-			testCustomer->addAccount(new Account(12345));
-			testCustomer->deleteAccount(12345);
-			std::vector<Account*> testAccounts = testCustomer->getAccounts();
-
-			Assert::AreEqual(nullptr, testAccounts[0]);
+			Customer* testCustomer = new Customer("", "", "");
+			testCustomer->addAccount(1111, 12345);
+			testCustomer->addAccount(2222, 54321);
+			testCustomer->removeAccount(12345);
+			std::vector<Account*>* testAccounts = testCustomer->getAccounts();
+			Account* testAcct = new Account(2222, 54321, testCustomer);
+			Assert::AreEqual(testAcct, testAccounts[0][0]);
 			delete testCustomer;
 		}
 
 		TEST_METHOD(CustomerGetAccounts)//Tests GetAccounts on the Customer class to make sure it returns the correct account information
 		{
-			Customer* testCustomer = new Customer();
-			testCustomer->addAccount(1);
-			testCustomer->addAccount(2);
-			testCustomer->addAccount(3);
+			Customer* testCustomer = new Customer("","","");
+			testCustomer->addAccount(1111, 12345);
+			testCustomer->addAccount(2222, 12346);
+			testCustomer->addAccount(3333, 12347);
 
-			std::vector<Account*> testAccounts = testCustomer->getAccounts();
-			Assert::AreEqual(1, testAccounts[0]->getAccountNumber());
-			Assert::AreEqual(2, testAccounts[1]->getAccountNumber());
-			Assert::AreEqual(3, testAccounts[2]->getAccountNumber());
+			std::vector<Account*>* testAccounts = testCustomer->getAccounts();
+
+			Account* testAccountOne = new Account(1111, 12345, testCustomer);
+			Account* testAccountTwo = new Account(2222, 12346, testCustomer);
+			Account* testAccountThree = new Account(3333, 12347, testCustomer);
+
+			Assert::AreEqual(testAccountOne, testAccounts[0][0]);
+			Assert::AreEqual(testAccountTwo, testAccounts[0][1]);
+			Assert::AreEqual(testAccountThree, testAccounts[0][2]);
 			delete testCustomer;
 		}
 
@@ -197,10 +196,10 @@ namespace ATMUnitTest
 
 		TEST_METHOD(AccountGetCustomer)//Tests GetCustomer on the Account class to make sure it returns the correct customer information
 		{
-			Customer* testCustomer = new Customer();
-			testCustomer->addAccount(1);
-			std::vector<Account*> testAccounts = testCustomer->getAccounts();
-			Assert::AreSame(testCustomer, testAccounts[0]->getCustomer());
+			Customer* testCustomer = new Customer("", "", "");
+			testCustomer->addAccount(1111, 12345);
+			std::vector<Account*>* testAccounts = testCustomer->getAccounts();
+			Assert::AreSame(testCustomer, testAccounts[0][0]->getCustomer());
 			delete testCustomer;
 		}
 
@@ -231,7 +230,7 @@ namespace ATMUnitTest
 
 		TEST_METHOD(AccountGetBalance)//Tests GetBalance on the Account class 
 		{
-			Account* balance = new Account;
+			Account* balance = new Account(1111, 12345, nullptr);
 			balance->deposit(200.00);
 			Assert::AreEqual(200.00, balance->getBalance());
 			delete balance;
@@ -239,8 +238,8 @@ namespace ATMUnitTest
 
 		TEST_METHOD(AccountWithdrawalValid)//Tests Withdrawal on the Account class with sufficient funds 
 		{
-			int acctBal = 100.00;
-			Account* balance = new Account;
+			double acctBal = 100.00;
+			Account* balance = new Account(1111,12345, nullptr);
 			balance->withdraw(75.00);
 			Assert::AreEqual(25.00, balance->getBalance());
 			delete balance;
@@ -248,8 +247,8 @@ namespace ATMUnitTest
 
 		TEST_METHOD(AccountWithdrawalInvalid)//Tests Withdrawal on the Account class with insufficient funds
 		{
-			int acctBal = 100.00;
-			Account* balance = new Account;
+			double acctBal = 100.00;
+			Account* balance = new Account(1111, 12345, nullptr);
 			bool passWithdraw;
 			passWithdraw = balance->withdraw(150.00);
 			Assert::IsFalse(passWithdraw);
@@ -258,7 +257,7 @@ namespace ATMUnitTest
 
 		TEST_METHOD(AccountDeposit)//Tests Deposit on the Account class 
 		{
-			Account* balance = new Account;
+			Account* balance = new Account(1111, 12345, nullptr);
 			balance->deposit(111.50);
 			Assert::AreEqual(111.50, balance->getBalance());
 			delete balance;

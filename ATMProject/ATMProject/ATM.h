@@ -1,5 +1,6 @@
 #pragma once
-#include "ATM.h"
+#include "Customer.h"
+
 
 /*
 BankBalance
