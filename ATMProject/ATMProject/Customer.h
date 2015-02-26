@@ -59,20 +59,21 @@ public:
 		phone = newPhone;
 	}
 
-	void addAccount(int pin, int accountNumber, this)
+	void addAccount(int pin, int accountNumber)
 	{
-		accounts[numAccounts] = new Account();
+		accounts[numAccounts] = new Account(pin, accountNumber, this);
 		numAccounts++;
 	}
 
 	void removeAccount(int accountNumber)
 	{
-		for (int i = 0, i < numAccounts; i++)
+		for (int i = 0; i < numAccounts; i++)
 		{
 			if (accountNumber == accounts[numAccounts]->getAccountNum())
 			{
 				delete accounts[i];
-				accounts->erase(i);
+				std::vector<Account*>::const_iterator tempIter = accounts.begin() + i;
+				accounts.erase(tempIter);
 				break;
 			}
 		}
@@ -80,7 +81,7 @@ public:
 
 	std::vector<Account*>* getAccounts()
 	{
-		return accounts[];
+		return &accounts;
 	}
 
 	void transferBalance(double amount, int accountFrom, int accountTo)
@@ -91,9 +92,9 @@ public:
 		accountIndexFrom = getAccountIndex(accountFrom);
 		accountIndexTo = getAccountIndex(accountTo);
 
-		if (accounts[accountIndexFrom]->transferOut(double amount))
+		if (accounts[accountIndexFrom]->transferOut(amount))
 		{
-			accounts[accountIndexTo]->transferIn(double amount);
+			accounts[accountIndexTo]->transferIn(amount);
 		}
 	}
 
