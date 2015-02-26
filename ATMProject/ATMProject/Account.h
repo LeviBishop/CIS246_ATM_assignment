@@ -1,43 +1,96 @@
 #pragma once
-#include "Account.h"
+#include "Customer.h"
+#include "Transaction.h"
 #include <cstdlib>
+#include <vector>
 
 class Account
 {
 private:
 	int pin;
-	int balance;
-	int acctNumber;
-	Customer** customer;
-	Customer* History;
+	double balance;
+	int accountNum;
+	Customer* customer;
+	std::vector<Transaction*> transHistory;
+
+	void decBalance(double change)
+	{
+		balance -= change;
+	}
+
+	void incBalance(double change)
+	{
+		balance += change;
+	}
 
 public:
-	std::string getCustomer()
+	Account(int pin, int accountNum, Customer* customer)
 	{
+		this->pin = pin;
+		this->accountNum = accountNum;
+		balance = 0.0;
+		this->customer = customer;
 	}
 	
-	std::bool verifyPin()
+	Customer* getCustomer(void)
 	{
+		return customer;
 	}
+	
+	bool verifyPin(int inputPin);
 
-	std::void changePin()
+	void changePin(int oldPin, int newPin)
 	{		
+		if (verifyPin(oldPin))
+		{
+			pin = newPin;
+		}
 	}
 
-	std::bool statement()
+	std::vector<Transaction*>* statement(void)
 	{
+
 	}
 
-	std::double getBalance()
+	double getBalance(void)
 	{
+		return balance;
 	}
 
-	std::void withdraw()
+	bool withdraw(double withAmt)
 	{
+		if (balance >= withAmt)
+		{
+			decBalance;
+			return true;
+		}
+		return false;
 	}
 
-	std::void deposit()
+	bool transferOut(double transAmt)
 	{
+		if (transAmt >= balance)
+		{
+			decBalance(transAmt);
+			
+			return true;
+		}
+		return false;
+	}
+
+	void transferIn(double transAmt)
+	{
+		incBalance(transAmt);
+	}
+
+	void deposit(double depAmt)
+	{
+		incBalance(depAmt);
+	}
+
+	int getAccountNum(void)
+	{
+		return accountNum;
 	}
 
 }; 

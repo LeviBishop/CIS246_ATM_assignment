@@ -5,6 +5,7 @@
 #include "ATM.h"
 #include "Account.h"
 #include "Customer.h"
+#include <cstdlib>
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -175,6 +176,7 @@ namespace ATMUnitTest
 			std::vector<Account*> testAccounts = testCustomer->getAccounts();
 
 			Assert::AreEqual(nullptr, testAccounts[0]);
+			delete testCustomer;
 		}
 
 		TEST_METHOD(CustomerGetAccounts)//Tests GetAccounts on the Customer class to make sure it returns the correct account information
@@ -188,6 +190,7 @@ namespace ATMUnitTest
 			Assert::AreEqual(1, testAccounts[0]->getAccountNumber());
 			Assert::AreEqual(2, testAccounts[1]->getAccountNumber());
 			Assert::AreEqual(3, testAccounts[2]->getAccountNumber());
+			delete testCustomer;
 		}
 
 		//ACCOUNT CLASS TESTS *******************************
@@ -198,79 +201,67 @@ namespace ATMUnitTest
 			testCustomer->addAccount(1);
 			std::vector<Account*> testAccounts = testCustomer->getAccounts();
 			Assert::AreSame(testCustomer, testAccounts[0]->getCustomer());
+			delete testCustomer;
 		}
 
 		TEST_METHOD(AccountVerifyPin)//Tests VerifyPin on the Account class to make sure it verifies the pin properly
 		{
-			Account* testAccount = new Account(1);
-			testAccount->setPin(1234);
-			Assert::IsTrue(testAccount->verifyPin(1234));
+			Account* testAccount = new Account(1111, 12345, nullptr);
+			Assert::IsTrue(testAccount->verifyPin(1111));
+			delete testAccount;
 		}
 
 		//LEVI section
 
 		TEST_METHOD(AccountChangePin)//Tests ChangePin on the Account class to make sure the pin is properly updated to the new pin
 		{
-			Account* testPin = new Account;
-			testPin->changePin("newPin");
-			Assert::AreSame("newPin", testPin->changePin());
-			delete "newPin"
+			Account* testPin = new Account(1111, 12345, nullptr);
+			testPin->changePin(1111, 5555);
+			Assert::IsTrue(testPin->verifyPin(5555));
+			delete testPin;
 		}
 
-		TEST_METHOD(AccountStatement)//Tests Statement on the Account class to make sure it returns all the transaction information for the specified time period
+		/*TEST_METHOD(AccountStatement)//Tests Statement on the Account class to make sure it returns all the transaction information for the specified time period
 		{
 			Account* testStatement = new Account();
 			testStatement->statement("acctStatement");
 			Assert::AreEqual("acctStatement", testStatement->statement());
-			delete "acctStatement";
-		}
+			delete testStatement;
+		}*/
 
 		TEST_METHOD(AccountGetBalance)//Tests GetBalance on the Account class 
 		{
 			Account* balance = new Account;
-			balance->getBalance("number");
-			Assert::AreEqual("number", balance.getBalance());
-			delete "number";
+			balance->deposit(200.00);
+			Assert::AreEqual(200.00, balance->getBalance());
+			delete balance;
 		}
 
 		TEST_METHOD(AccountWithdrawalValid)//Tests Withdrawal on the Account class with sufficient funds 
 		{
-			int acctBal = 100;
+			int acctBal = 100.00;
 			Account* balance = new Account;
-			balance->withdraw(75);
-			if (75 <= acctBal)
-			{
-				return true;
-			} 
-			else
-			{
-				return false;
-			}
-			Assert::IsTrue(true);
+			balance->withdraw(75.00);
+			Assert::AreEqual(25.00, balance->getBalance());
+			delete balance;
 		}
 
 		TEST_METHOD(AccountWithdrawalInvalid)//Tests Withdrawal on the Account class with insufficient funds
 		{
-			int acctBal = 100;
+			int acctBal = 100.00;
 			Account* balance = new Account;
-			balance->withdraw(150);
-			if (150 >= acctBal)
-			{
-				true;
-			}
-			else
-			{
-				false;
-			}
-			Assert::IsTrue(true);
+			bool passWithdraw;
+			passWithdraw = balance->withdraw(150.00);
+			Assert::IsFalse(passWithdraw);
+			delete balance;
 		}
 
 		TEST_METHOD(AccountDeposit)//Tests Deposit on the Account class 
 		{
 			Account* balance = new Account;
-			balance->deposit("depAmount");
-			Assert::AreEqual("depAmount", balance->deposit());
-			delete "depAmount";
+			balance->deposit(111.50);
+			Assert::AreEqual(111.50, balance->getBalance());
+			delete balance;
 		}
 	};
 }
