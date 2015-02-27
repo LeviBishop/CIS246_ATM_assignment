@@ -29,7 +29,7 @@ class ATM
 private:
 	double bankBalance;
 	Customer* customer;
-	Account* accounts[];
+	std::vector<Account*> accounts;
 
 
 
