@@ -40,12 +40,15 @@ public:
 	
 	bool verifyPin(int inputPin);
 
-	void changePin(int oldPin, int newPin)
+	bool changePin(int oldPin, int newPin)
 	{		
 		if (verifyPin(oldPin))
 		{
 			pin = newPin;
+			return true;
 		}
+
+		return false;
 	}
 
 	/*std::vector<Transaction*>* statement(void)

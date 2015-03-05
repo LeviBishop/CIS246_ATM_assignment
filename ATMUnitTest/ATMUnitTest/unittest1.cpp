@@ -9,6 +9,29 @@
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
+namespace Microsoft
+{
+	namespace VisualStudio 
+	{
+		namespace CppUnitTestFramework 
+		{
+
+			template<>
+			static std::wstring ToString<Customer>(Customer* cust) 
+			{
+				return L"wtf";
+			}
+
+			template<>
+			static std::wstring ToString<Account>(Account* acct)
+			{
+				return L"wtf";
+			}
+
+		}
+	}
+}
+
 namespace ATMUnitTest
 {		
 	TEST_CLASS(UnitTest1)
@@ -173,7 +196,7 @@ namespace ATMUnitTest
 			testCustomer->removeAccount(12345);
 			std::vector<Account*>* testAccounts = testCustomer->getAccounts();
 			Account* testAcct = new Account(2222, 54321, testCustomer);
-			Assert::AreEqual(testAcct, testAccounts[0][0]);
+			Assert::AreSame(testAcct, testAccounts[0][0]);
 			delete testCustomer;
 		}
 
@@ -190,9 +213,9 @@ namespace ATMUnitTest
 			Account* testAccountTwo = new Account(2222, 12346, testCustomer);
 			Account* testAccountThree = new Account(3333, 12347, testCustomer);
 
-			Assert::AreEqual(testAccountOne, testAccounts[0][0]);
-			Assert::AreEqual(testAccountTwo, testAccounts[0][1]);
-			Assert::AreEqual(testAccountThree, testAccounts[0][2]);
+			Assert::AreSame(testAccountOne, testAccounts[0][0]);
+			Assert::AreSame(testAccountTwo, testAccounts[0][1]);
+			Assert::AreSame(testAccountThree, testAccounts[0][2]);
 			delete testCustomer;
 		}
 
@@ -244,6 +267,7 @@ namespace ATMUnitTest
 		{
 			double acctBal = 100.00;
 			Account* balance = new Account(1111,12345, nullptr);
+			balance->deposit(acctBal);
 			balance->withdraw(75.00);
 			Assert::AreEqual(25.00, balance->getBalance());
 			delete balance;
