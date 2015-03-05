@@ -37,7 +37,13 @@ public:
 		return customer;
 	}
 	
-	bool verifyPin(int inputPin);
+	bool verifyPin(int inputPin)
+	{
+		if (inputPin == pin)
+			return true;
+
+		return false;
+	}
 
 	bool changePin(int oldPin, int newPin)
 	{		

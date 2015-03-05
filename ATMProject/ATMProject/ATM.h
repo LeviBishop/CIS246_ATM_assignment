@@ -97,6 +97,12 @@ public:
 	void assignAccount(int pin, int accountNumber)
 	{
 		customer->addAccount(pin, accountNumber);
+		account = customer->getAccount();
+	}
+
+	bool verifyPin(int inputPin)
+	{
+		return account->verifyPin(inputPin);
 	}
 
 	Customer* getCustomer(void)

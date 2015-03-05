@@ -27,6 +27,7 @@ public:
 		name = newName;
 		address = newAddress;
 		phone = newPhone;
+		account = nullptr;
 	}
 	std::string getName(void)
 	{
