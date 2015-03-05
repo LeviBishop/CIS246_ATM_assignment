@@ -29,7 +29,7 @@ namespace ATMUnitTest
 		//ADAM section
 		TEST_METHOD(ATMGetCustomerInfoValid)//Tests GetCustomerInfo in ATM class with a customer object that has valid info
 		{
-			//ATM* testAtm = new ATM();
+			
 			//testAtm->
 			Customer* testCustomer = new Customer(testName, testAddress, testPhone);
 			Assert::AreEqual(testName, testCustomer->getName());
@@ -91,43 +91,27 @@ namespace ATMUnitTest
 
 		//JAMES Section
 
-		TEST_METHOD(ATMTransferBalanceValid)//Tests TransferBalance on the ATM class with sufficient funds to transfer
-		{
-			//atm.transferBalance(500);
-			//Assert::AreEqual(500, account1->getBalance());
-			//Assert::AreEqual(500, account2->getBalance());
-		}
-
-		TEST_METHOD(ATMTransferBalanceInvalid)//Tests TransferBalance on the ATM class with insufficient funds to transfer
-		{
-			//atm.transferBalance(500);
-			//Assert::AreEqual(0, account1->getBalance());
-			//Assert::AreEqual(0, account2->getBalance());
-		}
-
-		TEST_METHOD(ATMDestroyCard)//Tests DestroyCard on the ATM class to ensure the card is destroyed?
-		{
-			//Assert::IsTrue(atm.destroyCard());
-		}
-
 		//CUSTOMER CLASS TESTS ******************
 
 		TEST_METHOD(CustomerGetName)//Tests GetName on the Customer class to make sure it returns the correct value
 		{
 			Customer* testCustomer = new Customer(testName, "", "");
 			Assert::AreEqual(testName, testCustomer->getName());
+			delete testCustomer;
 		}
 
 		TEST_METHOD(CustomerGetAddress)//Tests GetAddress on the Customer class to make sure it returns the correct value
 		{
 			Customer* testCustomer = new Customer("", testAddress, "");
 			Assert::AreEqual(testAddress, testCustomer->getAddress());
+			delete testCustomer;
 		}
 
 		TEST_METHOD(CustomerGetPhone)//Tests GetPhone on the Customer class to make sure it returns the correct value
 		{
 			Customer* testCustomer = new Customer("", "", testPhone);
 			Assert::AreEqual(testPhone, testCustomer->getPhone());
+			delete testCustomer;
 		}
 
 		TEST_METHOD(CustomerSetName)//Tests SetName on the Customer class to make sure it sets the correct value
@@ -135,6 +119,7 @@ namespace ATMUnitTest
 			Customer* testCustomer = new Customer("", "", "");
 			testCustomer->setName(testName);
 			Assert::AreEqual(testName, testCustomer->getName());
+			delete testCustomer;
 		}
 
 		//JUSTIN section
@@ -179,22 +164,18 @@ namespace ATMUnitTest
 			delete testCustomer;
 		}
 
-		TEST_METHOD(CustomerGetAccounts)//Tests GetAccounts on the Customer class to make sure it returns the correct account information
+		TEST_METHOD(CustomerGetAccount)//Tests GetAccounts on the Customer class to make sure it returns the correct account information
 		{
 			Customer* testCustomer = new Customer("","","");
 			testCustomer->addAccount(1111, 12345);
-			testCustomer->addAccount(2222, 12346);
-			testCustomer->addAccount(3333, 12347);
 
-			std::vector<Account*>* testAccounts = testCustomer->getAccounts();
+			Account* testAccounts = testCustomer->getAccounts();
 
-			Account* testAccountOne = new Account(1111, 12345, testCustomer);
-			Account* testAccountTwo = new Account(2222, 12346, testCustomer);
-			Account* testAccountThree = new Account(3333, 12347, testCustomer);
+			Account* testAccount = new Account(1111, 12345, testCustomer);
 
-			//Assert::AreSame(testAccountOne, testAccounts[0][0]);
-			//Assert::AreSame(testAccountTwo, testAccounts[0][1]);
-			//Assert::AreSame(testAccountThree, testAccounts[0][2]);
+			Assert::AreEqual(1234, testAccount->getAccountNum());
+			Assert::IsTrue(testAccount->verifyPin(1111));
+
 			delete testCustomer;
 		}
 
@@ -204,10 +185,10 @@ namespace ATMUnitTest
 		{
 			Customer* testCustomer = new Customer(testName, testAddress, testPhone);
 			testCustomer->addAccount(1111, 12345);
-			std::vector<Account*>* testAccounts = testCustomer->getAccounts();
-			Assert::AreEqual(testCustomer->getName(), testAccounts[0][0]->getCustomer()->getName());
-			Assert::AreEqual(testCustomer->getAddress(), testAccounts[0][0]->getCustomer()->getAddress());
-			Assert::AreEqual(testCustomer->getPhone(), testAccounts[0][0]->getCustomer()->getPhone());
+			Account* testAccount = testCustomer->getAccount();
+			Assert::AreEqual(testCustomer->getName(), testAccount->getCustomer()->getName());
+			Assert::AreEqual(testCustomer->getAddress(), testAccount->getCustomer()->getAddress());
+			Assert::AreEqual(testCustomer->getPhone(), testAccount->getCustomer()->getPhone());
 			delete testCustomer;
 		}
 
@@ -227,14 +208,6 @@ namespace ATMUnitTest
 			Assert::IsTrue(testPin->verifyPin(5555));
 			delete testPin;
 		}
-
-		/*TEST_METHOD(AccountStatement)//Tests Statement on the Account class to make sure it returns all the transaction information for the specified time period
-		{
-			Account* testStatement = new Account();
-			testStatement->statement("acctStatement");
-			Assert::AreEqual("acctStatement", testStatement->statement());
-			delete testStatement;
-		}*/
 
 		TEST_METHOD(AccountGetBalance)//Tests GetBalance on the Account class 
 		{
