@@ -11,31 +11,43 @@ int main(void)
 	int accessPin;
 	char choice;
 
-	cout << "Welcome to telebank! Please enter your card\n";
-	cout << "(simulating card being inserted)(Enter 12341234)\n";
+	cout << "Welcome to telebank! Please enter your card.\n";
+	cout << "(simulating card being inserted)(Entering 12341234)\n";
 
 	atm->assignCustomer("name", "address", "phone");
 	atm->assignAccount(testPin, accountAccess);
 
 	do 
 	{
-		cout << "Please enter your PIN for this account\n";
+		cout << "Please enter your PIN for this account. (testing PIN is 1111)\n";
 		cin >> accessPin;
+
+		if (!atm->verifyPin(accessPin))
+		{
+			cout << "Invalid PIN!\n";
+		}
 
 	} while (!atm->verifyPin(accessPin));
 	
 	do 
 	{
 		int value;
+		cout << "(C)heck Balance\n";
 		cout << "(D)eposit\n";
 		cout << "(W)ithdraw\n";
 		cout << "(E)xit\n";
 		cin >> choice;
 
-		if (choice == 'd')
+		if (choice == 'c')
+		{
+			cout << "Your current balance is " << atm->getBalance() << ".\n";
+		}
+
+		else if (choice == 'd')
 		{
 			cout << "How much would you like to deposit?\n";
 			cin >> value;
+			atm->deposit(value);
 			cout << "You have deposited " << value << " into your account\n";
 		}
 
@@ -45,8 +57,12 @@ int main(void)
 			cin >> value;
 			if (atm->withdraw(value))
 			{
-				cout << "You withdrew " << value << " from your account\n";
-				cout << "(money comes out)\n";
+				cout << "You withdrew " << value << " from your account (money comes out)\n";
+			}
+
+			else
+			{
+				cout << "You have insufficient funds.\n";
 			}
 
 		}
@@ -54,7 +70,7 @@ int main(void)
 
 	} while (choice != 'e');
 
-
+	cout << "Thank you for using telebank. See you next time!\n";
 	system("pause");
 
 	return 0;
