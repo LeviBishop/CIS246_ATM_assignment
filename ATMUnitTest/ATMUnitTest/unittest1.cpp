@@ -22,14 +22,18 @@ namespace ATMUnitTest
 
 		//ATM CLASS TESTS ************
 
-		//ADAM section
-		/*TEST_METHOD(ATMGetCustomerInfoValid)//Tests GetCustomerInfo in ATM class with a customer object that has valid info
-		{
+		std::string testAddress = "123 Green Ln, Eugene, OR 97405";
+		std::string testName = "Adam Cameron";
+		std::string testPhone = "541-555-1234";
 
-			Customer* testCustomer = new Customer("Adam Cameron", "123 Green Ln", "777-777-7777");
-			Assert::AreSame("Adam Cameron", testCustomer.getName());
-			Assert::AreSame("151 Green Ln", testCustomer.getAddress());
-			Assert::AreSame("777-777-7777", testCustomer.getPhone());
+		//ADAM section
+		TEST_METHOD(ATMGetCustomerInfoValid)//Tests GetCustomerInfo in ATM class with a customer object that has valid info
+		{
+			//ATM* testAtm = new ATM();
+			Customer* testCustomer = new Customer(testName, testName, testPhone);
+			Assert::AreSame(testName, testCustomer->getName());
+			Assert::AreSame(testAddress, testCustomer->getAddress());
+			Assert::AreSame(testPhone, testCustomer->getPhone());
 			delete testCustomer;
 		}
 
@@ -85,7 +89,7 @@ namespace ATMUnitTest
 			testPIN->testPin(5555)
 			Assert::AreEqual(setPin, verifyNewPin);
 			delete testPIN;
-		}*/
+		}
 
 		//JAMES Section
 
