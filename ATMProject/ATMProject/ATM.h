@@ -36,7 +36,6 @@ private:
 
 public:
 
-	ATM(void);
 	void getCustomerInfo(void)
 	{
 		std::cout << "Name: \n" << customer->getName() << "\n";
@@ -98,5 +97,10 @@ public:
 	void assignAccount(int pin, int accountNumber)
 	{
 		customer->addAccount(pin, accountNumber);
+	}
+
+	Customer* getCustomer(void)
+	{
+		return customer;
 	}
 };
