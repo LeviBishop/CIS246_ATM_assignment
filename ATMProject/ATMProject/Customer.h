@@ -19,13 +19,11 @@ private:
 	std::string name;
 	std::string address;
 	std::string phone;
-	std::vector<Account*> accounts;
-	int numAccounts;
+	Account* account;
 
 public:
 	Customer(std::string newName, std::string newAddress, std::string newPhone)
 	{
-		numAccounts = 0;
 		name = newName;
 		address = newAddress;
 		phone = newPhone;
@@ -59,54 +57,16 @@ public:
 
 	void addAccount(int pin, int accountNumber)
 	{
-		accounts[numAccounts] = new Account(pin, accountNumber, this);
-		numAccounts++;
+		account = new Account(pin, accountNumber, this);
 	}
 
 	void removeAccount(int accountNumber)
 	{
-		for (int i = 0; i < numAccounts; i++)
-		{
-			if (accountNumber == accounts[numAccounts]->getAccountNum())
-			{
-				delete accounts[i];
-				std::vector<Account*>::const_iterator tempIter = accounts.begin() + i;
-				accounts.erase(tempIter);
-				break;
-			}
-		}
+		account = nullptr;
 	}
 
-	std::vector<Account*>* getAccounts()
+	Account* getAccount()
 	{
-		return &accounts;
-	}
-
-	bool transferBalance(double amount, int accountFrom, int accountTo)
-	{
-		int accountIndexFrom;
-		int accountIndexTo;
-
-		accountIndexFrom = getAccountIndex(accountFrom);
-		accountIndexTo = getAccountIndex(accountTo);
-
-		if (accounts[accountIndexFrom]->transferOut(amount))
-		{
-			accounts[accountIndexTo]->transferIn(amount);
-			return true;
-		}
-
-		return false;
-	}
-
-	int getAccountIndex(int accountNum)
-	{
-		for (int i = 0; i < numAccounts; i++)
-		{
-			if (accountNum == accounts[i]->getAccountNum())
-			{
-				return i;
-			}
-		}
+		return account;
 	}
 };

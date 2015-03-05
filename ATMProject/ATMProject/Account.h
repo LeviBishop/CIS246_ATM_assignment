@@ -12,7 +12,6 @@ private:
 	double balance;
 	int accountNum;
 	Customer* customer;
-	std::vector<Transaction*> transHistory;
 
 	void decBalance(double change)
 	{
@@ -51,11 +50,6 @@ public:
 		return false;
 	}
 
-	/*std::vector<Transaction*>* statement(void)
-	{
-
-	}*/
-
 	double getBalance(void)
 	{
 		return balance;
@@ -69,22 +63,6 @@ public:
 			return true;
 		}
 		return false;
-	}
-
-	bool transferOut(double transAmt)
-	{
-		if (transAmt >= balance)
-		{
-			decBalance(transAmt);
-			
-			return true;
-		}
-		return false;
-	}
-
-	void transferIn(double transAmt)
-	{
-		incBalance(transAmt);
 	}
 
 	void deposit(double depAmt)

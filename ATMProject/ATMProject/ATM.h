@@ -29,7 +29,8 @@ class ATM
 private:
 	double bankBalance;
 	Customer* customer;
-	std::vector<Account*> accounts;
+	Account* account;
+	int accountNum;
 
 
 
@@ -49,67 +50,37 @@ public:
 		return testInt;
 	}
 
-	void getBalance(int account)
+	double getBalance(void)
 	{
-		int index = customer->getAccountIndex(account);
-		std::cout << "Your current balance is: " << accounts[index]->getBalance() << ".\n";
+		return customer->getAccount()->getBalance();
 	}
 
-	void withdraw(double amount, int account)
+	bool withdraw(double amount)
 	{
-		int index = customer->getAccountIndex(account);
-		if (accounts[index]->withdraw(amount))
+		if (account->withdraw(amount))
 		{
-			std::cout << "You have received " << amount << ".\n";
+			return true;
 		}
-		else
-		{
-			std::cout << "You have insufficient funds!\n";
-		}
+		
+		return false;
 	}
 
-	void deposit(double amount, int account)
+	void deposit(double amount)
 	{
-		int index = customer->getAccountIndex(account);
+		account->deposit(amount);
 	}
 
-	void changePin(int pin, int account)
+	bool changePin(int pin)
 	{
-		int index = customer->getAccountIndex(account);
 		int oldPin;
 		bool pinChanged = false;
-		for (int i = 0; i < 3; i++)
+		
+		if (account->changePin(oldPin, pin))
 		{
-			std::cout << "Please enter your old Pin";
-			std::cin >> oldPin;
-			if (accounts[index]->changePin(oldPin, pin))
-			{
-				std::cout << "You have successfully changed your PIN\n";
-				pinChanged = true;
-			}
-			else
-			{
-				std::cout << "That entry is invalid\n";
-			}
-		}
-		if (!pinChanged)
-		{
-			std::cout << "You have entered an invalid PIN to many times. \n";
-			std::cout << "Your account is now locked. Please speak with someone inside the bank to resolve this. \n";
+			return true;
 		}
 
-	}
-
-	void transferBalance(double amount, int accountFrom, int accountTo)
-	{
-		int indexFrom = customer->getAccountIndex(accountFrom);
-		int indexTo = customer->getAccountIndex(accountTo);
-
-		if (customer->transferBalance(amount, accountFrom, accountTo))
-		{
-			std::cout << "You have successfully transfered " << amount << " from \n"
-				 << accountFrom << " to " << accountTo << ".\n";
-		}
+		return false;
 
 	}
 
@@ -118,4 +89,14 @@ public:
 		std::cout << "Your card has been destroyed!\n";
 	}
 
+
+	void assignCustomer(std::string name, std::string address, std::string phone)
+	{
+		customer = new Customer(name, address, phone);
+	}
+
+	void assignAccount(int pin, int accountNumber)
+	{
+		customer->addAccount(pin, accountNumber);
+	}
 };
